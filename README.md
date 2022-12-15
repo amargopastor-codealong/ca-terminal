@@ -82,7 +82,7 @@ Obtendremos un resultado como el siguiente:
 
 ```
 Applications    Downloads       Music
-Public          Projects            Desktop
+Public          Projects        Desktop
 Library         Pictures        Documents
 Movies          code
 ```
@@ -129,6 +129,14 @@ De manera general todos los comandos en la terminal van a seguir la misma forma:
 command [ --options ] [Arguments]
 ```
 
+Los argumentos son valores exteriores que pasamos al programa: pueden ser directorios, ficheros, números, palabras o cualquier otro tipo de dato. ¡Los diferentes argumentos siempre se separan por espacios! Así que si tu argumento contiene un espacio, debes utilizar comillas o usar la `\` para _escapar_ el espacio.
+
+> Algunas veces los argumentos necesitan que se indique a que parámetro se asocia, en ese caso, debemos ponerlo después de una opción, por ejemplo:
+
+```
+convert help.wav --format mp3 --output help.mp3
+```
+
 ## Options
 
 Son algunos de los parámetros que podemos seleccionar en un programa. Pueden presentarse como una única letra con `-` o en un formato más largo con `--`.
@@ -142,16 +150,6 @@ En el caso de las opciones (también llamadas `flags`) que son letras individual
 ```
 ls -a -l
 ls -al
-```
-
-## Arguments
-
-Los argumentos son valores exteriores que pasamos al programa: pueden ser directorios, ficheros, números, palabras o cualquier otro tipo de dato. ¡Los diferentes argumentos siempre se separan por espacios! Así que si tu argumento contiene un espacio, debes utilizar comillas o usar la `\` para _escapar_ el espacio.
-
-> Algunas veces los argumentos necesitan que se indique a que parámetro se asocia, en ese caso, debemos ponerlo después de una opción, por ejemplo:
-
-```
-convert help.wav --format mp3 --output help.mp3
 ```
 
 ### Command
@@ -255,14 +253,54 @@ Vamos a ver a continuación los comandos que más emplearemos a lo largo del boo
   - `rm -rf`: 🚧Elimina una carpeta y sus ficheros🚧
 
 ```bash
- _________________________________________________________________________________________________________________
-< Any fool can write code that a computer can understand. Good programmers write code that humans can understand. >
- -----------------------------------------------------------------------------------------------------------------
+ _________________________________________________________
+< Any fool can write code that a computer can understand.
+  Good programmers write code that humans can understand. >
+ ---------------------------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
+```
+
+## Object lesson
+
+Vamos a ejecutar una serie de comandos para crear y editar un fichero de manera rápida desde la terminal. Sigue los siguientes pasos:
+
+```bash
+# Crea un directorio nuevo
+mkdir demo
+# Accede al nuevo directorio
+cd demo
+# Crea un nuevo fichero
+touch file.txt
+# Añade información al nuevo fichero desde la terminal
+echo "hello world" > file.txt
+# Abre el nuevo fichero con el editor de textos
+open file.txt
+# Abre el nuevo fichero con el editor de textos Nano
+nano file.txt
+# Accede a la información del nuevo fichero
+cat file.txt
+# Borra el nuevo fichero
+rm -rf file.txt
+# Crea una página web desde la terminal
+touch index.html
+echo '<h1>Hello world</h1>' > index.html
+open ./index.html
+# Mejora la página web
+nano index.html
+<div>
+<h1>Hello world</h1>
+</div>
+<div>
+<p>This is my first web site</p>
+</div>
+<div>
+<p>I hope one day I will be worth millions</p>
+</div>
+open index.html
 ```
 
 ## Recursos adicionales
